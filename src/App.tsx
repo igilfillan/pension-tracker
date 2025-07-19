@@ -3,10 +3,14 @@ import PensionForm, {
   SKIP_LINK_TARGET as FORM_SKIP_LINK_TARGET,
 } from "./components/PensionForm";
 import type { PensionFormData } from "./components/PensionForm";
-import { PensionChart, SkeletonChart } from "./components/PensionChart";
+import { PensionChart } from "./components/PensionChart";
 import { calculatePensionProjection } from "./utils/pensionCalculator";
 import "./App.css";
 import SkipLinks from "./components/SkipLinks.tsx";
+import { SkeletonChart } from "./components/SkeletonChart.tsx";
+import { Header } from "./components/Header.tsx";
+import { Footer } from "./components/Footer.tsx";
+import { MAIN_SKIPLINK_ID } from "./constants/constants.ts";
 
 function App() {
   const [chartData, setChartData] = useState<ReturnType<
@@ -20,13 +24,16 @@ function App() {
 
   return (
     <>
-      <SkipLinks links={skipLinks} />
+      <SkipLinks
+        links={[
+          { text: "skip to main", href: MAIN_SKIPLINK_ID },
+          { text: "skip to form", href: FORM_SKIP_LINK_TARGET },
+        ]}
+      />
 
       <div className="flex flex-col md:grid md:grid-cols-[150px_1fr] md:grid-rows-[1fr_auto]">
         <div className="bg-black md:row-span-1 md:row-end-auto">
-          <header className="w-full bg-black p-4 flex items-center">
-            <img src="/mintago.png" alt="Mintago Logo" className="h-8" />
-          </header>
+          <Header />
         </div>
 
         {/* Main */}
@@ -51,18 +58,10 @@ function App() {
           </div>
         </main>
 
-        {/* Footer */}
-        <footer className="bg-gray-300 md:col-span-2">footer stuff</footer>
+        <Footer />
       </div>
     </>
   );
 }
 
 export default App;
-
-const MAIN_SKIPLINK_ID = "main";
-
-const skipLinks = [
-  { text: "skip to main", href: MAIN_SKIPLINK_ID },
-  { text: "skip to form", href: FORM_SKIP_LINK_TARGET },
-];
