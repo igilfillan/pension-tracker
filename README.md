@@ -55,9 +55,12 @@ This is a standard way to allow keyboard users to skip navigation links in the h
 
 - **Recharts**: Hidden from screen readers using `aria-hidden="true"` as they are not accessible by default.
 - **Accessible Tables**:
-    - I have created accessible tables containing pot information for screen reader users
+    - I have created accessible tables containing pot information for screen reader users. These are not visible in the UI but are present in the markup.
     - Tables include a description and a suitable caption.
     - Descriptions are associated with the table using ARIA labels.
     - The section containing the tables is marked with `aria-live="polite"`, notifying screen readers when the content changes dynamically. After form submission, this triggers a notification via the screen reader, informing users that the chart region has been updated.
 
+
+### Lighthouse Report
+- the UI is 100 accessible
 ![Screenshot 2025-07-22 at 15.22.13.png](public/Screenshot%202025-07-22%20at%2015.22.13.png)
