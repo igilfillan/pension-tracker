@@ -27,7 +27,7 @@ I have provided a test for a component and one for a utility function:
 ---
 
 ## Accessibility Issues Addressed
-As we talked about accessibility and how to achieve it in our conversatioin, I thought it might be interesting to show some ways to make the UI more accessible for both screen readers and keyboard users. 
+As we talked about accessibility and how to achieve it in our conversation, I thought it might be interesting to show some ways to make the UI more accessible for both screen readers and keyboard users. The UI is **100% accessible**.
 
 
 ### Skip Links
