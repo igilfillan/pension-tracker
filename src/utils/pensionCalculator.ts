@@ -1,10 +1,11 @@
 import { calculatePot } from "./calculatePot";
-import type { PensionFormData } from "../components/PensionForm";
+import type { PensionFormDataNormalized } from "../components/PensionForm";
 import {
   DEFAULT_AGE_OF_DEATH,
   DEFAULT_ANNUAL_GROWTH_RATE,
   DEFAULT_CURRENT_AGE,
 } from "../constants/constants.ts";
+import { calculateTargetPot } from "./calculateTargetPot.ts";
 
 export function calculatePensionProjection({
   desiredIncome,
@@ -40,10 +41,12 @@ export function calculatePensionProjection({
     startingPot: growthPhaseData.finalPotValue,
   });
 
-  // Present Value of annuity formula (simplified) - desiredIncome * ((1 - Math.pow(1 + r, -n)) / r)
-  const r = annualGrowthRateDecimal;
-  const n = ageOfDeath - retirementAge;
-  const targetPot = desiredIncome * ((1 - Math.pow(1 + r, -n)) / r);
+  const targetPot = calculateTargetPot(
+    desiredIncome,
+    annualGrowthRateDecimal,
+    ageOfDeath,
+    retirementAge,
+  );
 
   return {
     growth: growthPhaseData.data,
@@ -52,7 +55,7 @@ export function calculatePensionProjection({
   };
 }
 
-type PensionInputs = PensionFormData & {
+type PensionInputs = PensionFormDataNormalized & {
   currentAge?: number;
   annualGrowthRate?: number;
   ageOfDeath?: number;

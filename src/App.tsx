@@ -1,8 +1,10 @@
 import { useState } from "react";
 import PensionForm, {
+  type PensionFormData,
+  type PensionFormDataNormalized,
   SKIP_LINK_TARGET as FORM_SKIP_LINK_TARGET,
 } from "./components/PensionForm";
-import type { PensionFormData } from "./components/PensionForm";
+
 import { PensionChart } from "./components/PensionChart";
 import { calculatePensionProjection } from "./utils/pensionCalculator";
 import "./App.css";
@@ -18,7 +20,11 @@ function App() {
   > | null>(null);
 
   const handleFormSubmit = (data: PensionFormData) => {
-    const result = calculatePensionProjection(data);
+    const normalizedData = Object.fromEntries(
+      Object.entries(data).map(([key, value]) => [key, Number(value)]),
+    ) as PensionFormDataNormalized;
+
+    const result = calculatePensionProjection(normalizedData);
     setChartData(result);
   };
 
@@ -36,9 +42,8 @@ function App() {
           <Header />
         </div>
 
-        {/* Main */}
         <main className="bg-green-100 md:row-span-1 md:row-end-auto" id="main">
-          <h1>Retirement Planner</h1>
+          <h1 className="text-4xl font-bold mb-8 px-4">Retirement Planner</h1>
           <div className="flex flex-col lg:flex-row-reverse">
             <div className="w-full lg:w-1/2 p-4">
               <PensionForm onSubmit={handleFormSubmit} />
@@ -57,7 +62,6 @@ function App() {
             </div>
           </div>
         </main>
-
         <Footer />
       </div>
     </>
