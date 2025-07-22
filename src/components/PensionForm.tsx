@@ -81,7 +81,7 @@ export default function PensionForm({ onSubmit }: Props) {
 
       <div>
         <label className="block font-medium" htmlFor="personalContribution">
-          Your monthly contribution (£)
+          Personal monthly contribution (£)
         </label>
         <input
           type="number"
