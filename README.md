@@ -1,5 +1,18 @@
 # pension-tracker
 
+## Project Setup
+
+This project was created using **Vite** and **Vitest**.
+
+### How to Run
+
+1. Install dependencies:
+   ```bash
+   npm install
+2. Start the development server:
+   ```bash
+   npm run dev
+   
 
 ## Unit Tests
 
