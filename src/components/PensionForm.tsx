@@ -1,13 +1,6 @@
 import { useForm } from "react-hook-form";
 import { MINIMUM_RETIREMENT_AGE } from "../constants/constants.ts";
 
-const formDefaults = {
-  desiredIncome: "50000",
-  employerContribution: "200",
-  personalContribution: "100",
-  retirementAge: "65",
-};
-
 export default function PensionForm({ onSubmit }: Props) {
   const {
     register,
@@ -155,3 +148,10 @@ type Props = {
 };
 
 export const SKIP_LINK_TARGET = "desiredIncome" as const;
+
+const formDefaults = {
+  desiredIncome: "50000",
+  employerContribution: "200",
+  personalContribution: "100",
+  retirementAge: "65",
+};

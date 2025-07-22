@@ -12,9 +12,13 @@ import {
 
 import type { PensionYearData } from "../types/shared.ts";
 import { mergeData, renderLegend } from "./PensionChart.utils.tsx";
+import { useMemo } from "react";
 
 export function PensionChart({ growth, drawdown, targetPot }: Props) {
-  const data = mergeData({ growth, drawdown });
+  const data = useMemo(
+    () => mergeData({ growth, drawdown }),
+    [growth, drawdown],
+  );
 
   return (
     <>

@@ -7,7 +7,6 @@ import PensionForm, {
 
 import { PensionChart } from "./components/PensionChart";
 import { calculatePensionProjection } from "./utils/pensionCalculator";
-import "./App.css";
 import SkipLinks from "./components/SkipLinks.tsx";
 import { SkeletonChart } from "./components/SkeletonChart.tsx";
 import { Header } from "./components/Header.tsx";
@@ -30,12 +29,7 @@ function App() {
 
   return (
     <>
-      <SkipLinks
-        links={[
-          { text: "skip to main", href: MAIN_SKIPLINK_ID },
-          { text: "skip to form", href: FORM_SKIP_LINK_TARGET },
-        ]}
-      />
+      <SkipLinks links={skiplinkData} />
 
       <div className="flex flex-col md:grid md:grid-cols-[150px_1fr] md:grid-rows-[1fr_auto]">
         <div className="bg-black md:row-span-1 md:row-end-auto">
@@ -69,3 +63,8 @@ function App() {
 }
 
 export default App;
+
+const skiplinkData = [
+  { text: "skip to main", href: MAIN_SKIPLINK_ID },
+  { text: "skip to form", href: FORM_SKIP_LINK_TARGET },
+];
