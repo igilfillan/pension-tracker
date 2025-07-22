@@ -11,7 +11,7 @@ I have provided a test for a component and one for a utility function:
 ---
 
 ## Accessibility Issues Addressed
-After our discussion where we talked about accessibility and how to achieve it, I thought it might be interesting to introduce some ways to make the UI more accessible for both screen readers and keyboard users. 
+After our discussion where we talked about accessibility and how to achieve it, I thought it might be interesting to introduce some ways to make the UI more accessible for both screen readers and keyboard users. I ran Lighthouse in dev tools and it was 100 Accessible.
 
 
 ### Skip Links
@@ -43,3 +43,5 @@ This is a standard way to allow keyboard users to skip navigation links in the h
     - Tables include a description and a suitable caption.
     - Descriptions are associated with the table using ARIA labels.
     - The section containing the tables is marked with `aria-live="polite"`, notifying screen readers when the content changes dynamically. After form submission, this triggers a notification via the screen reader, informing users that the chart region has been updated.
+
+![Screenshot 2025-07-22 at 15.22.13.png](public/Screenshot%202025-07-22%20at%2015.22.13.png)
