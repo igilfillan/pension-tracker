@@ -27,7 +27,7 @@ I have provided a test for a component and one for a utility function:
 ---
 
 ## Accessibility Issues Addressed
-Making a business website accessible is a legal imperative. Under the UK Equality Act 2010, businesses are required to make reasonable adjustments for disabled users, and the recent European Accessibility Act (June 2025), states that accessible websites will be mandatory for businesses operating in the EU.
+Making a business website accessible is a legal imperative. Under the UK Equality Act 2010, businesses are required to make reasonable adjustments for disabled users, and the recent European Accessibility Act (June 2025), states that accessible websites are mandatory for businesses operating in the EU.
 
 As we talked about accessibility and how to achieve it in our conversation, I thought it might be interesting to show some ways to make the UI more accessible for both screen readers and keyboard users. The UI is **100% accessible**.
 
