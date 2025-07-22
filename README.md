@@ -12,6 +12,9 @@ This project was created using **Vite** and **Vitest**.
 2. Start the development server:
    ```bash
    npm run dev
+3. Run the tests:
+   ```bash
+   npm run test
    
 
 ## Unit Tests
